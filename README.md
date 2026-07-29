@@ -25,8 +25,8 @@
 
 <table>
   <tr>
-    <td valign="top"><img src="./profile-ascii.svg" width="370" /></td>
-    <td valign="top"><img src="./info-card.svg?v=3" width="520" /></td>
+    <td valign="top"><img src="./profile-ascii.svg" width="420" /></td>
+    <td valign="top"><img src="./info-card.svg?v=4" width="520" /></td>
   </tr>
 </table>
 
@@ -102,15 +102,15 @@ availability: "Available for Summer 2026 internships"
 <table>
   <tr>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api?username=OxHazem&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=7ee787&text_color=c9d1d9&ring_color=58a6ff" width="400" />
+      <img src="https://github-readme-stats.vercel.app/api?username=OxHazem&show_icons=true&count_private=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=7ee787&text_color=c9d1d9&ring_color=58a6ff&cache_seconds=86400" width="400" />
     </td>
     <td>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OxHazem&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8" width="340" />
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OxHazem&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8&cache_seconds=86400" width="340" />
     </td>
   </tr>
 </table>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=OxHazem&theme=github-dark-blue&hide_border=true&background=0d1117&stroke=58a6ff&ring=58a6ff&fire=7ee787&currStreakLabel=58a6ff" width="500" />
+<img src="https://streak-stats.demolab.com/?user=OxHazem&theme=github-dark-blue&hide_border=true&background=0d1117&stroke=58a6ff&ring=58a6ff&fire=7ee787&currStreakLabel=58a6ff" width="500" />
 
 </div>
 
