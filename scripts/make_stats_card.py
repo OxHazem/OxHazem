@@ -1,18 +1,28 @@
 """
 Generates stats-card.svg — premium terminal-style GitHub stats card.
-Fetches live data from the GitHub public REST API (no token needed).
+Uses the GitHub REST API. Uses GITHUB_TOKEN if set (5000 req/hr),
+otherwise falls back to unauthenticated (60 req/hr).
 
 Run from repo root: python scripts/make_stats_card.py [username]
 """
-import requests, sys
+import requests, sys, os
 from datetime import datetime
 
 USERNAME = sys.argv[1] if len(sys.argv) > 1 else "OxHazem"
+TOKEN    = os.environ.get("GITHUB_TOKEN", "")
 HEADERS  = {"Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28"}
+             "X-GitHub-Api-Version": "2022-11-28"}
+if TOKEN:
+    HEADERS["Authorization"] = f"Bearer {TOKEN}"
 
 def fetch(url):
     r = requests.get(url, headers=HEADERS, timeout=15)
+    if r.status_code == 403:
+        remaining = r.headers.get("X-RateLimit-Remaining", "?")
+        reset     = r.headers.get("X-RateLimit-Reset", "?")
+        print(f"⚠️  Rate limited (remaining={remaining}, resets={reset}). "
+              f"Keeping existing stats-card.svg.")
+        sys.exit(0)
     r.raise_for_status()
     return r.json()
 

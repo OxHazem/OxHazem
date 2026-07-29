@@ -29,10 +29,14 @@ jobs:
 
       # ── GitHub stats card ─────────────────────────────────────────
       - name: Generate stats card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/make_stats_card.py OxHazem
 
       # ── Language breakdown card ───────────────────────────────────
       - name: Generate language breakdown card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/make_langs_card.py OxHazem
 
       # ── Commit all generated SVGs ─────────────────────────────────

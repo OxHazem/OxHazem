@@ -1,20 +1,46 @@
 """
 Generates langs-card.svg — premium horizontal-bar language breakdown card.
-Uses the public GitHub REST API. No token required.
+Uses the GitHub REST API.
+
+In GitHub Actions the GITHUB_TOKEN secret is injected automatically (5000 req/hr).
+Locally it falls back to unauthenticated (60 req/hr). You can also set:
+  export GITHUB_TOKEN=ghp_your_token
 
 Run from repo root: python scripts/make_langs_card.py [username]
 """
-import requests, sys
+import requests, sys, os
 from datetime import datetime
 
 USERNAME = sys.argv[1] if len(sys.argv) > 1 else "OxHazem"
+TOKEN    = os.environ.get("GITHUB_TOKEN", "")
 HEADERS  = {"Accept": "application/vnd.github+json",
-            "X-GitHub-Api-Version": "2022-11-28"}
+             "X-GitHub-Api-Version": "2022-11-28"}
+if TOKEN:
+    HEADERS["Authorization"] = f"Bearer {TOKEN}"
+    print("Using GITHUB_TOKEN (5000 req/hr)")
+else:
+    print("No GITHUB_TOKEN found — using unauthenticated (60 req/hr)")
 
 def fetch(url):
     r = requests.get(url, headers=HEADERS, timeout=15)
+    if r.status_code == 403:
+        # Rate limited — exit gracefully so the old SVG is kept
+        remaining = r.headers.get("X-RateLimit-Remaining", "?")
+        reset     = r.headers.get("X-RateLimit-Reset", "?")
+        print(f"⚠️  Rate limited (remaining={remaining}, resets={reset}). "
+              f"Keeping existing langs-card.svg.")
+        sys.exit(0)
     r.raise_for_status()
     return r.json()
+
+# Languages to skip — these inflate byte counts but don't represent code you *wrote*.
+# Jupyter Notebook = raw JSON with embedded outputs/images (1 notebook ≈ 50 MB)
+# TeX, Markdown, HTML etc. are markup, not programming languages.
+SKIP_LANGS = {
+    "Jupyter Notebook", "TeX", "Procfile", "Makefile",
+    "Dockerfile", "Shell", "Batchfile", "PowerShell",
+    "HTML", "CSS", "SCSS", "Less",
+}
 
 print(f"Fetching language data for {USERNAME}...")
 
@@ -27,6 +53,8 @@ while True:
         if repo.get("fork"): continue
         try:
             for lang, b in fetch(repo["languages_url"]).items():
+                if lang in SKIP_LANGS:
+                    continue   # skip inflated / non-programming languages
                 lang_bytes[lang] = lang_bytes.get(lang, 0) + b
         except Exception:
             pass
