@@ -11,16 +11,32 @@ permissions:
   contents: write
 
 jobs:
-  heatmap:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install requests beautifulsoup4
-      - run: python scripts/make_heatmap.py
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      # ── Contribution heatmap ──────────────────────────────────────
+      - name: Generate contribution heatmap
+        run: python scripts/make_heatmaps.py
+
+      # ── GitHub stats card ─────────────────────────────────────────
+      - name: Generate stats card
+        run: python scripts/make_stats_card.py OxHazem
+
+      # ── Language breakdown card ───────────────────────────────────
+      - name: Generate language breakdown card
+        run: python scripts/make_langs_card.py OxHazem
+
+      # ── Commit all generated SVGs ─────────────────────────────────
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "contrib-heatmap.svg"
+          commit_message: "chore: refresh profile cards [skip ci]"
+          file_pattern: "contrib-heatmap.svg stats-card.svg langs-card.svg"
