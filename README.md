@@ -93,7 +93,7 @@ availability: "Available for Summer 2026 internships"
 
 ---
 
-<!-- ═══════════════════  GITHUB STATS  ═══════════════════ -->
+<!-- ═══════════════════  GITHUB STATS  ═══════════════════
 
 <h3><code>OxHazem@github ~ $ git log --stat --summary</code></h3>
 
@@ -112,7 +112,7 @@ availability: "Available for Summer 2026 internships"
 
 </div>
 
----
+--- -->
 
 <!-- ═══════════════════  FEATURED PROJECTS  ═══════════════════ -->
 
