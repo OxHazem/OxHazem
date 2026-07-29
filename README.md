@@ -161,16 +161,16 @@ availability: "Available for Summer 2026 internships"
 
 ```json
 {
-  "LinkedIn"  : "https://linkedin.com/in/omar-hazem",
+  "LinkedIn"  : "https://www.linkedin.com/in/omar-hazem-ahmed-229a912wwwaa/",
   "GitHub"    : "https://github.com/OxHazem",
-  "Email"     : "<!-- your-email@example.com -->",
+  "Email"     : "omarhazemhassan@gmail.com",
   "Location"  : "Egypt 🇪🇬"
 }
 ```
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/omar-hazem)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/omar-hazem-ahmed-229a912wwwaa/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OxHazem)
 
 </div>

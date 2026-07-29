@@ -62,7 +62,7 @@ svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380">
 
 <!-- Row: LinkedIn -->
 <text x="16"  y="236" class="text key" style="animation-delay:1.25s">LinkedIn   </text>
-<text x="130" y="236" class="text"     style="animation-delay:1.25s; fill:#58a6ff;">linkedin.com/in/omar-hazem</text>
+<text x="130" y="236" class="text"     style="animation-delay:1.25s; fill:#58a6ff;">linkedin.com/in/omar-hazem-ahmed-229a...</text>
 
 <!-- Row: Location -->
 <text x="16"  y="258" class="text key" style="animation-delay:1.4s">Location   </text>

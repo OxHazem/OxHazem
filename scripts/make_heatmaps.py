@@ -15,7 +15,7 @@ svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 150">
     0% { opacity: 0; transform: translate(-5px, -5px); }
     100% { opacity: 1; transform: translate(0, 0); }
   }
-  .day { width: 10px; height: 10px; rx: 2px; ry: 2px; opacity: 0; animation: slideDown 0.6s forwards; }
+  .day { opacity: 0; animation: slideDown 0.6s forwards; }
 </style>
 <rect width="100%" height="100%" fill="#0d1117" />
 <g transform="translate(20, 20)">\n'''
@@ -30,7 +30,7 @@ if response.status_code != 200:
         for day in range(7):
             level = str(random.choices([0, 1, 2, 3, 4], weights=[60, 15, 10, 10, 5])[0])
             delay = (week * 0.02) + (day * 0.02)
-            svg += f'<rect class="day" x="{week * 14}" y="{day * 14}" fill="{PALETTE[level]}" style="animation-delay: {delay}s;" />\n'
+            svg += f'<rect class="day" x="{week * 14}" y="{day * 14}" width="10" height="10" rx="2" ry="2" fill="{PALETTE[level]}" style="animation-delay: {delay}s;" />\n'
 else:
     # Parse real GitHub data
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -41,7 +41,7 @@ else:
     for day_node in days:
         level = day_node.get('data-level', '0')
         delay = (week_col * 0.02) + (day_row * 0.02)
-        svg += f'<rect class="day" x="{week_col * 14}" y="{day_row * 14}" fill="{PALETTE[level]}" style="animation-delay: {delay}s;" />\n'
+        svg += f'<rect class="day" x="{week_col * 14}" y="{day_row * 14}" width="10" height="10" rx="2" ry="2" fill="{PALETTE[level]}" style="animation-delay: {delay}s;" />\n'
         
         day_row += 1
         if day_row == 7:
