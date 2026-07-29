@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-USERNAME = "omar-hazem" # Change this if your GitHub username is different!
+USERNAME = "OxHazem" # Change this if your GitHub username is different!
 
 print(f"Fetching data for {USERNAME}...")
 url = f"https://github.com/users/{USERNAME}/contributions"
