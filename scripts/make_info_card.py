@@ -10,7 +10,7 @@ svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600">
 </style>
 <rect width="100%" height="100%" fill="#0d1117" />
 
-<text x="20" y="40" class="text title" style="animation-delay: 0.1s;">omar-hazem@github ~ $ neofetch</text>
+<text x="20" y="40" class="text title" style="animation-delay: 0.1s;">OxHazem@github ~ $ neofetch</text>
 <text x="20" y="70" class="text" style="animation-delay: 0.3s;">-------------------------------</text>
 
 <text x="20" y="110" class="text key" style="animation-delay: 0.5s;">Role:</text>
