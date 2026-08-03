@@ -63,7 +63,7 @@
   <text x="282" y="92" font-family="'Segoe UI Emoji',monospace" font-size="18" opacity="0"
         style="animation:fadeSlide .4s 0.35s forwards;">👥</text>
   <text x="282" y="122" class="mono val fade" font-size="26" fill="#e6edf3"
-        style="animation-delay:0.40s;">85</text>
+        style="animation-delay:0.40s;">86</text>
   <text x="282" y="140" class="mono lbl fade" font-size="10" fill="#484f58"
         style="animation-delay:0.44s;">Followers</text>
 
@@ -81,6 +81,6 @@
 <circle cx="28" cy="186" r="4" fill="#27c93f" style="animation:pulse 2s infinite;"/>
 <text x="40" y="190" class="mono" font-size="11" fill="#7ee787">Live</text>
 <text x="74" y="190" class="mono" font-size="11" fill="#484f58">
-  Auto-refreshed daily via GitHub Actions · 2026-08-02
+  Auto-refreshed daily via GitHub Actions · 2026-08-03
 </text>
 </svg>
