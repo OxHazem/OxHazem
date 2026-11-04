@@ -1,0 +1,3 @@
+Subsets of Inter, used to outline text in the profile graphics.
+Copyright 2016-2023 The Inter Project Authors (https://github.com/rsms/inter)
+Licensed under the SIL Open Font License 1.1: https://openfontlicense.org

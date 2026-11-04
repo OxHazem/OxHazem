@@ -1,56 +1,76 @@
+"""Builds profile/contributions-{dark,light}.svg from the public contribution calendar.
+
+If GitHub cannot be reached or its markup changes, the existing graphics are kept.
+"""
+import re
+import sys
+from datetime import date
+
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
 
-USERNAME = "OxHazem" # Change this if your GitHub username is different!
+from svg_kit import DISPLAY, MEDIUM, REGULAR, THEMES, text, text_width, write_svg
 
-print(f"Fetching data for {USERNAME}...")
-url = f"https://github.com/users/{USERNAME}/contributions"
-response = requests.get(url)
+USERNAME = "OxHazem"
+W, CELL, GAP, GRID_TOP, LEFT = 1000, 14, 3.6, 92, 30
 
-# Draw the SVG
-svg = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 150">
-<style>
-  @keyframes slideDown {
-    0% { opacity: 0; transform: translate(-5px, -5px); }
-    100% { opacity: 1; transform: translate(0, 0); }
-  }
-  .day { opacity: 0; animation: slideDown 0.6s forwards; }
-</style>
-<rect width="100%" height="100%" fill="#0d1117" />
-<g transform="translate(20, 20)">\n'''
 
-PALETTE = {"0": "#161b22", "1": "#0e4429", "2": "#006d32", "3": "#26a641", "4": "#39d353"}
+def fetch():
+    url = f"https://github.com/users/{USERNAME}/contributions"
+    try:
+        response = requests.get(url, timeout=20)
+        response.raise_for_status()
+    except requests.RequestException as error:
+        print(f"Could not fetch contributions ({error}). Keeping existing graphics.")
+        sys.exit(0)
+    soup = BeautifulSoup(response.text, "html.parser")
+    # The calendar table is laid out by weekday, so order cells by date, not by markup.
+    days = sorted(
+        (date.fromisoformat(td["data-date"]), int(td.get("data-level", 0)))
+        for td in soup.select("td.ContributionCalendar-day[data-date]")
+    )
+    heading = soup.select_one("#js-contribution-activity-description")
+    match = re.search(r"[\d,]+", heading.get_text()) if heading else None
+    if not days or not match:
+        print("Contribution markup not recognised. Keeping existing graphics.")
+        sys.exit(0)
+    return days, match.group()
 
-# If the fetch fails, we will generate a stylized default grid so the script doesn't crash
-if response.status_code != 200:
-    print("Could not fetch live data. Generating placeholder grid...")
-    import random
-    for week in range(53):
-        for day in range(7):
-            level = str(random.choices([0, 1, 2, 3, 4], weights=[60, 15, 10, 10, 5])[0])
-            delay = (week * 0.02) + (day * 0.02)
-            svg += f'<rect class="day" x="{week * 14}" y="{day * 14}" width="10" height="10" rx="2" ry="2" fill="{PALETTE[level]}" style="animation-delay: {delay}s;" />\n'
-else:
-    # Parse real GitHub data
-    soup = BeautifulSoup(response.text, 'html.parser')
-    days = soup.find_all('td', class_='ContributionCalendar-day')
-    
-    week_col = 0
-    day_row = 0
-    for day_node in days:
-        level = day_node.get('data-level', '0')
-        delay = (week_col * 0.02) + (day_row * 0.02)
-        svg += f'<rect class="day" x="{week_col * 14}" y="{day_row * 14}" width="10" height="10" rx="2" ry="2" fill="{PALETTE[level]}" style="animation-delay: {delay}s;" />\n'
-        
-        day_row += 1
-        if day_row == 7:
-            day_row = 0
-            week_col += 1
 
-svg += '''</g>
-</svg>'''
+def render(days, total, mode):
+    t = THEMES[mode]
+    first_sunday = days[0][0].toordinal() - (days[0][0].weekday() + 1) % 7
+    pitch = CELL + GAP
+    height = GRID_TOP + 7 * pitch + 28
+    body = (
+        f'<rect x="1" y="1" width="{W - 2}" height="{height - 2}" rx="12" fill="{t["panel"]}" stroke="{t["line"]}" stroke-width="1.5"/>'
+        + text(LEFT, 52, total, DISPLAY, 30, t["accent"])
+    )
+    body += text(LEFT + text_width(total, DISPLAY, 30) + 10, 51, "contributions in the last year", MEDIUM, 18, t["body"])
 
-with open('contrib-heatmap.svg', 'w') as f:
-    f.write(svg)
-print("Success! Created contrib-heatmap.svg")
+    last_month_col = -9
+    for day, level in days:
+        col = (day.toordinal() - first_sunday) // 7
+        row = (day.weekday() + 1) % 7
+        x, y = LEFT + col * pitch, GRID_TOP + row * pitch
+        if day.day <= 7 and row == 0 or (col == 0 and row == 0 and day.day < 20):
+            if col - last_month_col >= 3:
+                body += text(x, GRID_TOP - 9, day.strftime("%b"), REGULAR, 13.5, t["mute"])
+                last_month_col = col
+        body += f'<rect x="{x:.1f}" y="{y:.1f}" width="{CELL}" height="{CELL}" rx="3" fill="{t["ramp"][min(level, 4)]}"/>'
+
+    more_width = text_width("More", REGULAR, 13.5)
+    x = W - LEFT - more_width - 10 - 5 * pitch + GAP
+    body += text(x - 10, 49, "Less", REGULAR, 13.5, t["mute"], anchor="end")
+    body += text(W - LEFT, 49, "More", REGULAR, 13.5, t["mute"], anchor="end")
+    for i, color in enumerate(t["ramp"]):
+        body += f'<rect x="{x + i * pitch:.1f}" y="38" width="{CELL}" height="{CELL}" rx="3" fill="{color}"/>'
+    write_svg(f"contributions-{mode}.svg", W, int(height), body,
+              f"{total} GitHub contributions in the last year")
+
+
+if __name__ == "__main__":
+    calendar, count = fetch()
+    for theme in THEMES:
+        render(calendar, count, theme)
+    print(f"Built contribution graphics ({count} contributions, {len(calendar)} days)")

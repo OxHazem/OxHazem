@@ -1,188 +1,67 @@
-<div align="center">
+<picture><source media="(prefers-color-scheme: dark)" srcset="./profile/hero-dark.svg"><img src="./profile/hero-light.svg" alt="Omar Hazem, Data Scientist and Software Developer. Builds computer vision and machine learning systems." width="100%"></picture>
 
-<!-- ═══════════════════  HEADER  ═══════════════════ -->
+<p align="center">
+  <a href="https://www.linkedin.com/in/omar-hazem-ahmed-229a912wwwaa/"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/btn-linkedin-dark.svg"><img src="./profile/btn-linkedin-light.svg" alt="LinkedIn" width="23%"></picture></a>
+  <a href="https://github.com/OxHazem"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/btn-github-dark.svg"><img src="./profile/btn-github-light.svg" alt="GitHub" width="23%"></picture></a>
+  <a href="mailto:omarhazemhassan@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/btn-email-dark.svg"><img src="./profile/btn-email-light.svg" alt="Email" width="23%"></picture></a>
+  <a href="./resumes/resume_ml.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/btn-resume-dark.svg"><img src="./profile/btn-resume-light.svg" alt="Download resume" width="23%"></picture></a>
+</p>
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   ██████╗ ██╗  ██╗██╗  ██╗ █████╗ ███████╗███████╗███╗   ███╗  ║
-║  ██╔═══██╗╚██╗██╔╝██║  ██║██╔══██╗╚══███╔╝██╔════╝████╗ ████║  ║
-║  ██║   ██║ ╚███╔╝ ███████║███████║  ███╔╝ █████╗  ██╔████╔██║  ║
-║  ██║   ██║ ██╔██╗ ██╔══██║██╔══██║ ███╔╝  ██╔══╝  ██║╚██╔╝██║  ║
-║  ╚██████╔╝██╔╝ ██╗██║  ██║██║  ██║███████╗███████╗██║ ╚═╝ ██║  ║
-║   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝  ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
+## About
 
-</div>
+I'm a Data Science and AI student at Zewail City (expected 2027), working mostly on computer vision, deep learning and explainable AI. I care about the full path from a clean dataset to a model people can run and understand, and I enjoy the software engineering that makes that possible.
 
-<!-- ═══════════════════  WHOAMI  ═══════════════════ -->
+**Open to internships and collaborations.**
 
-<div align="center">
+- **Researching:** Uncibm, an open-source library that standardizes Concept Bottleneck Models for interpretable deep learning (ongoing, pre-publication)
+- **Contributing:** Technical team member at AWS Cloud Club, Zewail City
+- **Certified:** Oracle Cloud Infrastructure 2025 Generative AI Professional
 
-<h3><code>OxHazem@github ~ $ whoami</code></h3>
+## Selected work
 
-<table>
-  <tr>
-    <td valign="top"><img src="./profile-ascii.svg" width="420" /></td>
-    <td valign="top"><img src="./info-card.svg?v=4" width="520" /></td>
-  </tr>
-</table>
+<p>
+  <a href="https://github.com/OxHazem/TissueInsight"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/project-tissueinsight-dark.svg"><img src="./profile/project-tissueinsight-light.svg" alt="TissueInsight: multi-modal cancer detection with gene expression analysis, image classification and a RAG assistant. 91% F1-score." width="49%"></picture></a>
+  <a href="https://github.com/OxHazem/video-colorization"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/project-colorization-dark.svg"><img src="./profile/project-colorization-light.svg" alt="Automatic Video Colorization: ResNet34-UNet model with temporal smoothing. 0.9235 SSIM, 23.71 dB PSNR." width="49%"></picture></a>
+</p>
+<p>
+  <a href="https://github.com/OxHazem/Bowling-Tracking-System"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/project-tracking-dark.svg"><img src="./profile/project-tracking-light.svg" alt="Object Detection and State Tracking: real-time YOLOv8 pipeline. 98.19% mAP@50." width="49%"></picture></a>
+  <a href="https://github.com/OxHazem/video-keyframe-summarization"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/project-summarization-dark.svg"><img src="./profile/project-summarization-light.svg" alt="Video Keyframe Summarization: interpretable Transformer and BiLSTM models with attention heatmaps." width="49%"></picture></a>
+</p>
+<p>
+  <a href="https://github.com/OxHazem/ml-intrusion-detection-pipeline"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/project-intrusion-dark.svg"><img src="./profile/project-intrusion-light.svg" alt="ML Intrusion Detection: pipeline for imbalanced network traffic. 99% precision, 96% recall." width="49%"></picture></a>
+  <a href="https://github.com/OxHazem/adaptive-code-lab"><picture><source media="(prefers-color-scheme: dark)" srcset="./profile/project-code-lab-dark.svg"><img src="./profile/project-code-lab-light.svg" alt="Adaptive Code Learning Lab: Clean Architecture Flask backend with 560+ tests and 74% coverage." width="49%"></picture></a>
+</p>
 
-</div>
+<sub>See all projects in my <a href="https://github.com/OxHazem?tab=repositories">repositories</a>.</sub>
 
----
+## Experience
 
-<!-- ═══════════════════  CURRENTLY WORKING ON  ═══════════════════ -->
+| Role | Organization | Dates |
+|:-----|:-------------|:------|
+| **Technical Team Member** | AWS Cloud Club, Zewail City | Dec&nbsp;2025&nbsp;–&nbsp;Present |
+| **Freelance Data Science and ML Engineer** | Mostaqel | Apr&nbsp;2025&nbsp;–&nbsp;Sep&nbsp;2025 |
+| **IBM Data Scientist Intern** | Digital Egypt Pioneers Initiative (DEPI), MCIT | Oct&nbsp;2024&nbsp;–&nbsp;Jun&nbsp;2025 |
 
-<h3><code>OxHazem@github ~ $ cat current_status.log</code></h3>
+## Toolkit
 
-```yaml
-status      : "Open to internships & collaborations"
-focus_2025  :
-  - "Deep Learning research @ Zewail City"
-  - "Building Computer Vision pipelines"
-  - "Leveling up C# & Systems Design"
-interests   : ["ML", "CV", "Backend Engineering", "Open Source"]
-availability: "Available for Summer 2026 internships"
-```
+<picture><source media="(prefers-color-scheme: dark)" srcset="./profile/toolkit-dark.svg"><img src="./profile/toolkit-light.svg" alt="Languages: Python, C++, R, JavaScript, SQL. Machine learning: PyTorch, scikit-learn, XGBoost, Optuna, imblearn. Computer vision: OpenCV, YOLOv8, FFmpeg. AI systems: RAG, NLP, Generative AI, Explainable AI. Engineering: Flask, Docker, PostgreSQL, SQLite, GitHub Actions, Pytest." width="100%"></picture>
 
----
+## Activity
 
-<!-- ═══════════════════  TECH STACK  ═══════════════════ -->
+<picture><source media="(prefers-color-scheme: dark)" srcset="./profile/contributions-dark.svg"><img src="./profile/contributions-light.svg" alt="GitHub contribution calendar for the last year" width="100%"></picture>
 
-<h3><code>OxHazem@github ~ $ pkg list --installed</code></h3>
+## Resumes
 
-**Languages**
+| Track | Focus | Resume |
+|:------|:------|:-------|
+| **Machine Learning / Data Science** | ML engineering, model training, data pipelines | [Download PDF](./resumes/resume_ml.pdf) |
+| **Computer Vision** | CV research, image processing, deep learning | [Request by email](mailto:omarhazemhassan@gmail.com) |
+| **Software Engineering** | Backend, systems, general SWE roles | [Request by email](mailto:omarhazemhassan@gmail.com) |
+| **General** | One-page overview for broad applications | [Request by email](mailto:omarhazemhassan@gmail.com) |
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+## Contact
 
-**ML / Data Science**
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-
-**Tools & Platforms**
-
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-
----
-
-<!-- ═══════════════════  CONTRIBUTION HEATMAP  ═══════════════════ -->
-
-<h3><code>OxHazem@github ~ $ ./contributions.sh</code></h3>
-
-<div align="center">
-<img src="./contrib-heatmap.svg?v=1" width="860" />
-</div>
-
----
-
-<!-- ═══════════════════  GITHUB STATS  ═══════════════════
-
-<h3><code>OxHazem@github ~ $ git log --stat --summary</code></h3>
-
-<div align="center">
-
-<table>
-  <tr>
-    <td valign="top">
-      <img src="./stats-card.svg?v=1" width="480" />
-    </td>
-    <td valign="top">
-      <img src="./langs-card.svg?v=1" width="420" />
-    </td>
-  </tr>
-</table>
-
-</div>
-
---- -->
-
-<!-- ═══════════════════  FEATURED PROJECTS  ═══════════════════ -->
-
-<h3><code>OxHazem@github ~ $ ls -la ~/projects/</code></h3>
-
-> 📌 **Pinned below** — or check my [repositories tab](https://github.com/OxHazem?tab=repositories) for the full list.
-
-<!-- Add your featured project cards below. Replace the repo names with your actual repos. -->
-
-<div align="center">
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=OxHazem&repo=OxHazem&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&icon_color=7ee787)](https://github.com/OxHazem/OxHazem)
-
-<!-- 
-  ↓ Add more project cards here — replace REPO_NAME with your actual repo names:
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=OxHazem&repo=REPO_NAME&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&icon_color=7ee787)](https://github.com/OxHazem/REPO_NAME)
--->
-
-</div>
-
----
-
-<!-- ═══════════════════  RESUMES  ═══════════════════ -->
-
-<h3><code>OxHazem@github ~ $ ls ~/resumes/</code></h3>
-
-> Click a link below to open or download the corresponding resume PDF.
-
-| Track | Description | Link |
-|:------|:------------|:----:|
-| 🧠 **Machine Learning / Data Science** | ML engineering, model training, data pipelines | [📄 Download](./resumes/resume_ml.pdf) |
-| 👁️ **Computer Vision** | CV research, image processing, deep learning | [📄 Download](./resumes/resume_cv.pdf) |
-| 💻 **Software Engineering** | Backend, systems, general SWE roles | [📄 Download](./resumes/resume_swe.pdf) |
-| 🌐 **General / All-rounder** | One-page overview for broad applications | [📄 Download](./resumes/resume_general.pdf) |
-
-> **Note:** Resumes are updated periodically. Last updated: *<!-- UPDATE_DATE -->*
-
----
-
-<!-- ═══════════════════  CONNECT  ═══════════════════ -->
-
-<h3><code>OxHazem@github ~ $ cat contact.json</code></h3>
-
-```json
-{
-  "LinkedIn"  : "https://www.linkedin.com/in/omar-hazem-ahmed-229a912wwwaa/",
-  "GitHub"    : "https://github.com/OxHazem",
-  "Email"     : "omarhazemhassan@gmail.com",
-  "Location"  : "Egypt 🇪🇬"
-}
-```
-
-<div align="center">
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/omar-hazem-ahmed-229a912wwwaa/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OxHazem)
-
-</div>
-
----
-
-<!-- ═══════════════════  FOOTER  ═══════════════════ -->
-
-<div align="center">
-
-```
-[ EOF ]  — Built with 🖤 & too much ☕ by OxHazem
-```
-
-![Profile views](https://komarev.com/ghpvc/?username=OxHazem&color=58a6ff&style=flat-square&label=profile+views)
-
-</div>
+- **LinkedIn:** [omar-hazem-ahmed](https://www.linkedin.com/in/omar-hazem-ahmed-229a912wwwaa/)
+- **GitHub:** [OxHazem](https://github.com/OxHazem)
+- **Email:** [omarhazemhassan@gmail.com](mailto:omarhazemhassan@gmail.com)
+- **Location:** Egypt
